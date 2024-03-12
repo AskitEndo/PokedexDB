@@ -1,6 +1,6 @@
 # PokédexDB
 
-PokédexDB is a web application that allows users to fetch Pokémon information based on user input. It utilizes data from [PokeAPI](https://pokeapi.co/) to provide comprehensive details about various Pokémon species.
+PokédexDB is a web application that allows users to fetch Pokémon image based on user input.
 
 ## Features
 
@@ -17,9 +17,10 @@ This project relies on the amazing data provided by [PokeAPI](https://pokeapi.co
 To use PokédexDB:
 
 1. Clone this repository.
-2. Open the `index.html` file in your web browser.
-3. Enter the name of the Pokémon you want to search for in the input field.
-4. Click the "Get Data" button to fetch information about the Pokémon.
+2. Use `npm i` to install the required dependencies.
+3. Open the `index.html` file in your web browser.
+4. Enter the name of the Pokémon you want to search for in the input field.
+5. Click the "Get Data" button to fetch information about the Pokémon.
 
 ## Feedback and Contributions
 
