@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAExMUAAgICAAACP8A9/f3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiAAAAAAAAIkQiAAAAAAJEREQgAAAAJEREREIAAAJERERERCAAAkREREREIAAkREQiRERCACIiIkQiIiIAIzMzETMzMgACMzMzMzMgAAIzMzMzMyAAACMzMzMyAAAAAjMzMyAAAAAAIjMiAAAAAAAAIgAAAAAAAAAAAAAAD+fwAA+B8AAPAPAADgBwAAwAMAAMADAACAAQAAgAEAAIABAADAAwAAwAMAAOAHAADwDwAA+B8AAP5/AAD//wAA"
+      rel="icon"
+      type="image/x-icon"
+    />
+    <title>PokédexDB</title>
+
+    <style>
+      .glow-text {
+        font-weight: bold;
+        font-size: 2rem;
+        text-shadow: 0 0 10px #5a42e1, 0 0 20px #4734d7, 0 0 30px #0087f6;
+        color: transparent;
+        -webkit-text-stroke: 2.5px #000000;
+        position: relative;
+        display: inline-block;
+      }
+
+      .glow-text:hover {
+        text-shadow: 0 0 5px #00f;
+      }
+
+      .glow-text::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -20px;
+      }
+
+      .success-icon::before,
+      .error-icon::before {
+        font-size: 2rem;
+        border: 2px solid black;
+        padding: 5px;
+        border-radius: 50%;
+        margin-left: 10px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .success-icon::before {
+        color: green; /* Adjusted color for tick mark */
+      }
+
+      .error-icon::before {
+        color: red; /* Adjusted color for cross mark */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-red-500">
+      <div
+        class="w-full max-w-xs mx-auto h-screen justify-center items-center flex flex-col"
+      >
+        <h2 class="glow-text font-bold text-3xl mb-4">
+          PokédexDB
+          <span id="apiStatus" class="success-icon mr-2 hidden">&#10003;</span>
+          <span id="apiError" class="error-icon mr-2 hidden">&#10007;</span>
+        </h2>
+
+        <div
+          class="bg-red-700 shadow-md rounded px-8 pt-6 pb-8 mb-4 border border-black"
+        >
+          <div class="mb-4">
+            <img
+              id="pokemonSprite"
+              class="hidden mx-auto w-full h-full"
+              src=""
+              alt="Pokemon Sprite"
+            />
+            <input
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="pokemonName"
+              type="text"
+              placeholder="Enter Pokemon's Name"
+            />
+          </div>
+          <div class="flex items-center justify-center">
+            <button
+              onclick="fetchData()"
+              class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded my-2 mx-2"
+            >
+              Get Data
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
